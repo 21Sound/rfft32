@@ -5,17 +5,16 @@
 |           Simon Becker                                                       |
 |           Moritz Waechtler                                                   |
 |           Ben Williges                                                       |
-|           Uwe Simmer                                                         |
 |           Hagen Jaeger                                                       |
+|           Uwe Simmer                                                         |
 |                                                                              |
 | Date:     21.03.2011      initial version                                    |
 |           26.07.2012      stride for sin/cos tables                          |
 |           18.11.2012      complex and real ffts                              |
-|           13.12.2019      reduced to minimum footprint for rfft, some        |
-                            optimizations                                      |
+|           13.12.2019      (i/)rfft-only, reduced to minimum computation      |
+|                            and memory footprint for (i/)rfft                 |
 \*----------------------------------------------------------------------------*/
 
-#include <stdio.h>
 #include "rfft32.h"
 
 typedef struct {
@@ -410,10 +409,9 @@ void irfft32(complex32 *spectrum, int32_t *output)
 
 //--------------------- License -----------------------------------------------
 
-// Copyright (c) 2019 Hagen Jaeger
 // Copyright (c) 2011-2012 Wiebke Lamping, Simon Becker, Moritz Waechtler,
-// Ben Williges, Uwe Simmer, Institute for Hearing Technology and Audiology,
-// Jade University of Applied Sciences Oldenburg.
+// Ben Williges, Uwe Simmer, Institute for Hearing Technology and 
+// Audiology, Jade University of Applied Sciences Oldenburg.
 
 // Permission is hereby granted, free of charge, to any person obtaining 
 // a copy of this software and associated documentation files 
